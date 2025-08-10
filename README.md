@@ -1,6 +1,6 @@
 # Invisibility Cloak Project
 
-This project creates a real-time invisibility cloak effect using computer vision and OpenCV. It works by detecting a specific colored cloth/object and replacing it with the background captured earlier.
+This project creates a git init effect using computer vision and OpenCV. It works by detecting a specific colored cloth/object and replacing it with the background captured earlier.
 
 ## Features
 
@@ -9,15 +9,34 @@ This project creates a real-time invisibility cloak effect using computer vision
 
 ## Requirements
 
-- Python 3.7 or higher
 - Webcam
 - Colored cloth/object (red, green, or blue)
 
 ## Installation
 
-1. Install the required packages:
+### Option 1: Using Virtual Environment (Recommended)
 ```bash
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+# On Windows:
+.venv\Scripts\activate
+# On macOS/Linux:
+source .venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
+```
+
+### Option 2: Global Installation
+```bash
+pip install opencv-python numpy
+```
+
+### Test Installation
+```bash
+python test_camera.py
 ```
 
 ## How to Run
@@ -55,9 +74,33 @@ python invisibility_cloak.py
 
 ## Troubleshooting
 
-- **Camera not opening**: Make sure your webcam is connected and not being used by another application
-- **Poor detection**: Adjust lighting or try a different colored cloth
-- **Flickering**: The advanced version has better filtering to reduce this issue
+### Common Issues:
+
+1. **ModuleNotFoundError: No module named 'cv2'**
+   - Solution: Install OpenCV in your virtual environment
+   ```bash
+   .venv\Scripts\activate
+   pip install opencv-python numpy
+   ```
+
+2. **Camera not opening**
+   - Make sure your webcam is connected and not being used by another application
+   - Try running `python test_camera.py` to test camera access
+   - Check if your camera drivers are up to date
+
+3. **Poor color detection**
+   - Adjust lighting conditions (bright, even lighting works best)
+   - Try a different colored cloth (bright red, green, or blue)
+   - Use the advanced version for better filtering
+
+4. **Flickering effect**
+   - The advanced version has better filtering to reduce this issue
+   - Adjust the smoothness setting in the advanced version
+
+5. **Virtual Environment Issues**
+   - Make sure you're in the correct directory
+   - Activate the virtual environment before running the project
+   - If using VS Code, select the correct Python interpreter
 
 ## Controls
 
